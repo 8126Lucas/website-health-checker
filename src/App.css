@@ -1,0 +1,226 @@
+/* From Uiverse.io by Smit-Prajapati */
+.container {
+    position: relative;
+    background: linear-gradient(135deg, rgb(179, 208, 253) 0%, rgb(164, 202, 248) 100%);
+    border-radius: 1000px;
+    padding: 10px;
+    display: grid;
+    place-content: center;
+    z-index: 0;
+    width: 500px;
+    margin: 0 10px;
+}
+
+.search-container {
+    position: relative;
+    width: inherit;
+    border-radius: 50px;
+    background: linear-gradient(135deg, rgb(218, 232, 247) 0%, rgb(214, 229, 247) 100%);
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.search-container::after, .search-container::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    position: absolute;
+}
+
+.search-container::before {
+    top: -1px;
+    left: -1px;
+    background: linear-gradient(0deg, rgb(218, 232, 247) 0%, rgb(255, 255, 255) 100%);
+    z-index: -1;
+}
+
+.search-container::after {
+    bottom: -1px;
+    right: -1px;
+    background: linear-gradient(0deg, rgb(163, 206, 255) 0%, rgb(211, 232, 255) 100%);
+    box-shadow: rgba(79, 156, 232, 0.7019607843) 3px 3px 5px 0px, rgba(79, 156, 232, 0.7019607843) 5px 5px 20px 0px;
+    z-index: -2;
+}
+
+.input {
+    padding: 10px;
+    width: 100%;
+    background: linear-gradient(135deg, rgb(218, 232, 247) 0%, rgb(214, 229, 247) 100%);
+    border: none;
+    color: #9EBCD9;
+    font-size: 14px;
+    border-radius: 50px;
+}
+
+.input:focus {
+    outline: none;
+    background: linear-gradient(135deg, rgb(239, 247, 255) 0%, rgb(214, 229, 247) 100%);
+}
+
+.search__icon {
+    width: 50px;
+    aspect-ratio: 1;
+    border-left: 2px solid white;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    border-radius: 50%;
+    padding-left: 12px;
+    margin-right: 10px;
+}
+
+.search__icon:hover {
+    border-left: 3px solid white;
+}
+
+.search__icon path {
+    fill: white;
+}
+
+
+/* -------------------- */
+
+/* From Uiverse.io by jeremyssocial */
+
+.terminal-loader {
+    border: 0.1em solid #333;
+    background-color: #1a1a1a;
+    color: #0f0;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1em;
+    padding: 1.5em 1em;
+    width: 20em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.terminal-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1.5em;
+    background-color: #333;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    padding: 0 0.4em;
+    box-sizing: border-box;
+}
+
+.terminal-controls {
+    float: right;
+}
+
+.control {
+    display: inline-block;
+    width: 0.6em;
+    height: 0.6em;
+    margin-left: 0.4em;
+    border-radius: 50%;
+    background-color: #777;
+}
+
+.control.close {
+    background-color: #e33;
+}
+
+.control.minimize {
+    background-color: #ee0;
+}
+
+.control.maximize {
+    background-color: #0b0;
+}
+
+.terminal-title {
+    float: left;
+    line-height: 1.5em;
+    color: #eee;
+}
+
+@keyframes blinkCursor {
+    50% {
+        border-right-color: transparent;
+    }
+}
+
+
+@keyframes type {
+    0%,
+    10% {
+        width: 0;
+    }
+    45%,
+    55% {
+        width: 14em;
+    }
+}
+
+.text {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 0.2em solid green;
+    animation:
+            type 4s steps(20, end) forwards,
+            blinkCursor 0.5s step-end infinite;
+    margin-top: 1.5em;
+    min-height: 1.2em;
+    vertical-align: top;
+}
+
+/* -------------------- */
+
+:root {
+    background-color: #1a1a1a;
+    --border: 0px;
+}
+.title {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: beige;
+    font-weight: bold;
+    font-size: 1.5em;
+    padding: 2em;
+    font-family: "Droid Sans Mono", "Courier New", Courier, monospace;
+}
+
+
+.counter {
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+  margin-bottom: 24px;
+
+  &:hover {
+    border-color: var(--accent-border);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+#center {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  place-content: center;
+  place-items: center;
+  flex-grow: 1;
+
+  @media (max-width: 1024px) {
+    padding: 32px 20px 24px;
+    gap: 18px;
+  }
+}
